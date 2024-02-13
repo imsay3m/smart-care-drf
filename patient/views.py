@@ -12,10 +12,10 @@ from django.core.mail import EmailMultiAlternatives
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login,logout
 from rest_framework.authtoken.models import Token
-from rest_framework.permissions import IsAdminUser,IsAuthenticated
+from rest_framework.permissions import IsAuthenticated
 # Create your views here.
 class PatientViewSet(viewsets.ModelViewSet):
-    permission_classes = [IsAdminUser]
+    permission_classes = [IsAuthenticated]
     queryset = Patient.objects.all()
     serializer_class=PatientSerializer
 
