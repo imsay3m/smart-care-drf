@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Online Appointment Running</title>
+</head>
+
+<body>
+    <table style="
+        max-width: 555px;
+        width: 100%;
+        font-family: 'Open Sans', Segoe, 'Segoe UI', 'DejaVu Sans','Trebuchet MS', Verdana, sans-serif;
+        background: #fff;
+        font-size: 13px;
+        color: #323232;" cellspacing="0" cellpadding="0" border="0" bgcolor="#ffffff" align="center">
+        <tbody>
+            <tr>
+                <td align="left">
+                    <h1 style="text-align: center">
+                        <span style="font-size: 15px">
+                            <strong>Online Appointment Confirmation</strong>
+                        </span>
+                    </h1>
+
+                    <p>
+                        Hello {{user.first_name}} {{user.last_name}},<br />
+                        Hope you are doing well. You requested for an online appointment with
+                        {{doctor.user.first_name}} {{doctor.user.last_name}}.
+                    </p>
+
+                    <p>Your doctor is available to meet with you. Join the below link as soon as
+                        possible:</p>
+
+                    <p align="center">
+                        <a href="{{doctor.meet_link}}" style="
+                        color: #fff;
+                        background-color: hsla(199, 69%, 84%, 1);
+                        width: 320px;
+                        font-size: 16px;
+                        border-radius: 3px;
+                        line-height: 44px;
+                        height: 44px;
+                        font-family: 'Open Sans', Arial, helvetica, sans-serif;
+                        text-align: center;
+                        text-decoration: none;
+                        display: inline-block;" target="_blank" data-saferedirecturl="{{doctor.meet_link}}">
+                            <span style="color: #000000">
+                                <strong>Join Appointment</strong>
+                            </span>
+                        </a>
+                    </p>
+                    <p align="left">&nbsp;</p>
+                    If the above link doesn't work, try copying and pasting
+                    the link below into your browser. If you continue to
+                    experience problems, please contact us.
+                    <br />
+                    {{doctor.meet_link}}
+                    <br />
+
+                    <p>Thank you,</p>
+                    <p>SmartCare</p>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+
+</html>
