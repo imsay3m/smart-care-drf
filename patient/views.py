@@ -32,7 +32,7 @@ class UserRegistrationAPIView(APIView):
             print("Token: " + str(token))
             uid=urlsafe_base64_encode(force_bytes(user.pk))
             print("UID: "+str(uid))
-            confirm_link=f"http://127.0.0.1:8000/patient/active/{uid}/{token}"
+            confirm_link=f"https://smart-care-drf.onrender.com/patient/active/{uid}/{token}"
             email_subject="Confirm Your Account"
             email_body=render_to_string('patient/confirmation_mail.html',{"confirm_link":confirm_link})
             email=EmailMultiAlternatives(email_subject,'',to=[user.email])
